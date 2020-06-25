@@ -9,6 +9,11 @@ public class Movement : MonoBehaviour
     public BoxCollider playerCollider;
     public float moveSpeed = 5f;
 
+    [Range(1, 10)]
+    public float jumpVelocity;
+    public float fallGravity;
+    public new Rigidbody rigidbody;
+
     //private GameObject enemy;
     private Enemy enemyScript;
 
@@ -18,12 +23,16 @@ public class Movement : MonoBehaviour
 
     public SphereCollider ItemDetect;
 
+
     // Start is called before the first frame update
     void Start()
     {
         playerCollider = GetComponent<BoxCollider>();
         playerCollider.size = new Vector3(0f, 1.1f, 0f);
         playerCollider.center = new Vector3(0f, playerCollider.size.y/2, 0);
+
+        //adding the rigidbody
+        rigidbody = GetComponent<Rigidbody>();
 
         //enemy = GameObject.Find("Capsule");
         //enemyScript = enemy.GetComponent<Enemy>();
@@ -63,8 +72,8 @@ public class Movement : MonoBehaviour
         }
         PlayerMovement();
 
-        
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -81,7 +90,18 @@ public class Movement : MonoBehaviour
     {
         float hor = Input.GetAxis("Horizontal");
         float ver = Input.GetAxis("Vertical");
-        Vector3 playerMovement = new Vector3(hor, 0f, ver).normalized * moveSpeed * Time.deltaTime;
-        transform.Translate(playerMovement, Space.Self);
+        
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rigidbody.velocity = Vector3.up * jumpVelocity;
+            Vector3 playerJump = new Vector3(0f, rigidbody.velocity.y, 0f);
+            
+            Debug.Log("Jumping");
+        }
+
+        Vector3 playerMoveVector = new Vector3(hor, 0f, ver).normalized * moveSpeed * Time.deltaTime;
+        transform.Translate(playerMoveVector, Space.Self);
+        
     }
 }

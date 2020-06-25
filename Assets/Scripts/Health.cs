@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
 {
     public int currentHealth = 100;
     public int maxHealth = 100;
-    public int addHealth = 5;
+    public const int addHealth = 5;
 
     //subtract damage from health on call
     public void TakeDamage(int damage)
@@ -20,10 +20,10 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void GainHealth(int heal)
+    public void GainHealth(int heal = addHealth)
     {
         //health regenerated is the same value as addHealth which is dependant on the regen value of object/prefab
-        heal = addHealth;
+        
         if (currentHealth < maxHealth)
         {
             currentHealth += heal;
