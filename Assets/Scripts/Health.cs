@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -15,8 +16,7 @@ public class Health : MonoBehaviour
         Debug.Log("Taking " + damage + " HP damage! Health = " + currentHealth+"HP");
         if(currentHealth <= 0)
         {
-            GetComponent<Movement>().moveSpeed = 0;
-            Debug.Log("YOU DIED!");
+            onDeath();
         }
     }
 
@@ -39,5 +39,12 @@ public class Health : MonoBehaviour
             currentHealth = maxHealth;
             Debug.Log("Gain " + heal + " HP ! Health = " + currentHealth + "HP");
         }
+    }
+
+    void onDeath()
+    {
+            GetComponent<Movement>().moveSpeed = 0;
+            Debug.Log("YOU DIED!");
+        SceneManager.LoadScene();
     }
 }

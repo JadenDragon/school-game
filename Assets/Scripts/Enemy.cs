@@ -42,8 +42,8 @@ public class Enemy : MonoBehaviour
             case EnemyState.CHASE:
                 Chase();
                 break;
-            case EnemyState.DEATH:
-                break;
+            /*case EnemyState.DEATH:
+                break;*/
         }
 
         
