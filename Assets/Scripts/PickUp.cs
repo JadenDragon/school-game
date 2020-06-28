@@ -47,7 +47,7 @@ public class PickUp : MonoBehaviour
             }
              else if (type == PickUpType.KEY)
             {
-                SceneManager.LoadScene(nextScene);
+                //SceneManager.LoadScene(nextScene);
             }
         }
     }

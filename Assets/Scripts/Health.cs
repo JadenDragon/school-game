@@ -45,6 +45,6 @@ public class Health : MonoBehaviour
     {
             GetComponent<Movement>().moveSpeed = 0;
             Debug.Log("YOU DIED!");
-        SceneManager.LoadScene();
+        //SceneManager.LoadScene();
     }
 }
