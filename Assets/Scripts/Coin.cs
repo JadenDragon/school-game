@@ -19,12 +19,12 @@ public class Coin : MonoBehaviour
         transform.Rotate(Vector3.right * RotationSpeed * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider is BoxCollider && collision.gameObject.tag == "Player")
         {
             //destroy object 0.2 seconds after collision with player
             Destroy(gameObject, 3f);
         }
-    }
+    }*/
 }

@@ -25,14 +25,14 @@ public class PlatformHorizontalMove : MonoBehaviour
         if (transform.position.y == startPosition)
         {
             //transform.position = new Vector3(0f, endPosition, 0f);
-            Vector3 destination = new Vector3(0f, endPosition, 0f);
+            Vector3 destination = new Vector3(transform.position.x, endPosition, transform.position.z);
             rb.position =  Vector3.Lerp(transform.position, destination, lerpPercent);
             
         }
         else if (transform.position.y == endPosition)
         {
             //transform.position = new Vector3(0f, startPosition, 0f);
-            Vector3 returnDestination = new Vector3(0f, startPosition, 0f);
+            Vector3 returnDestination = new Vector3(transform.position.x, startPosition, transform.position.z);
             rb.position = Vector3.Lerp(transform.position, returnDestination, lerpPercent);
         }
         //rb.MovePosition(transform.position * rb.velocity.y * Time.deltaTime);
