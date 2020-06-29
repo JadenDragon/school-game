@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
+    public static event Action OnPlayerDeath;
+
     public int currentHealth = 100;
     public int maxHealth = 100;
     public const int addHealth = 5;
@@ -41,10 +44,16 @@ public class Health : MonoBehaviour
         }
     }
 
-    void onDeath()
+     void onDeath()
     {
         GetComponent<Movement>().moveSpeed = 0;
         Debug.Log("YOU DIED!");
-        FindObjectOfType<GameManager>().PlayerDies();
+        //GameManager.GetManager().PlayerDies();
+        
+        //triggers event for every object that listens to it
+        if (OnPlayerDeath != null)
+        {
+            OnPlayerDeath();
+        }
     }
 }

@@ -57,6 +57,7 @@ public class Enemy : MonoBehaviour
             //moves enemy position to next position in list
             if (Vector3.Distance(transform.position, positions[currentPosition].position) > 1f)
             {
+                //moves enemy only with NavMesh in scene
                 enemyAgent.destination = positions[currentPosition].position;
                 Debug.Log("Just patrolling my route");
             }

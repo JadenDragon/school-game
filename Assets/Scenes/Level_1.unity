@@ -361,6 +361,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dd6eaf85a9b8b54195380c349018954, type: 3}
+--- !u!1 &278284895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278284896}
+  m_Layer: 0
+  m_Name: Path2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &278284896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278284895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.8, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1124488486}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &627607480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1228,6 +1258,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &1124488486 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1120413832743615487, guid: a1ed2796a1f46dd4ca61106f9c7821e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1204079977}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1204079977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1238,7 +1274,7 @@ PrefabInstance:
     - target: {fileID: 1120413832743615487, guid: a1ed2796a1f46dd4ca61106f9c7821e5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.2
+      value: -8.47
       objectReference: {fileID: 0}
     - target: {fileID: 1120413832743615487, guid: a1ed2796a1f46dd4ca61106f9c7821e5,
         type: 3}
@@ -1248,7 +1284,7 @@ PrefabInstance:
     - target: {fileID: 1120413832743615487, guid: a1ed2796a1f46dd4ca61106f9c7821e5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.2
+      value: -27.32
       objectReference: {fileID: 0}
     - target: {fileID: 1120413832743615487, guid: a1ed2796a1f46dd4ca61106f9c7821e5,
         type: 3}
@@ -1290,6 +1326,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1576046414654456181, guid: a1ed2796a1f46dd4ca61106f9c7821e5,
+        type: 3}
+      propertyPath: positions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576046414654456181, guid: a1ed2796a1f46dd4ca61106f9c7821e5,
+        type: 3}
+      propertyPath: positions.Array.data[0]
+      value: 
+      objectReference: {fileID: 1668125488}
+    - target: {fileID: 1576046414654456181, guid: a1ed2796a1f46dd4ca61106f9c7821e5,
+        type: 3}
+      propertyPath: positions.Array.data[1]
+      value: 
+      objectReference: {fileID: 278284896}
     - target: {fileID: 1640443252797614232, guid: a1ed2796a1f46dd4ca61106f9c7821e5,
         type: 3}
       propertyPath: m_Name
@@ -1675,6 +1726,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72081d54d9953ea4998cb8c9e6d8177c, type: 3}
+--- !u!1 &1668125487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1668125488}
+  m_Layer: 0
+  m_Name: Path1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1668125488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668125487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.83, y: 0, z: -8.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1124488486}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1686151448
 PrefabInstance:
   m_ObjectHideFlags: 0
