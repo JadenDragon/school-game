@@ -43,8 +43,8 @@ public class Health : MonoBehaviour
 
     void onDeath()
     {
-            GetComponent<Movement>().moveSpeed = 0;
-            Debug.Log("YOU DIED!");
-        //SceneManager.LoadScene();
+        GetComponent<Movement>().moveSpeed = 0;
+        Debug.Log("YOU DIED!");
+        FindObjectOfType<GameManager>().PlayerDies();
     }
 }
