@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
@@ -27,6 +25,6 @@ public class PlayerCamera : MonoBehaviour
         currentY_Rotation = Quaternion.Slerp(currentY_Rotation, playerY_Rotation, cameraSpeed * Time.deltaTime);
 
         transform.position = target.position + target.rotation * offset;
-        transform.rotation = currentY_Rotation * cameraRestPosition; 
+        transform.rotation = currentY_Rotation * cameraRestPosition;
     }
 }

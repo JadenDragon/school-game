@@ -108,4 +108,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 4818596192892856766, guid: eba7196d3dd74cf4ea42f46fb27e1b05, type: 3}
   triggerDistance: 2
-  damageAmount: 5
+  damageAmount: 10
