@@ -42,7 +42,9 @@ public class PickUp : MonoBehaviour
             else if (type == PickUpType.MONEY)
             {
                 ScoreManager playerScore = other.GetComponentInParent<ScoreManager>();
-                playerScore.AddScore(amount);
+                //playerScore.AddScore(amount);
+                ScoreManager.theScore += amount;
+                Debug.Log("score " + amount);
                 Destroy(gameObject);
             }
              else if (type == PickUpType.KEY)

@@ -6,25 +6,26 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    private int currentScore = 0;
-    public static int score;
-
-    Text text;
+    //private int currentScore = 0;
+    //Text text;
+    public static int theScore;
 
     private void Awake()
     {
-        text = GetComponent<Text>();
-
-        score = 0;
+        //scoreText = GetComponent<Text>();
+        theScore = 0;
+        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        text.text = "working " + currentScore;
+        //text.text = "working " + theScore;
+        GetComponent<Text>().text = "Score: " + theScore;
+        Debug.Log("Score is being updated");
     }
 
-    internal void AddScore(int amount)
+    /*internal void AddScore(int amount)
     {
         //adds amount to currentScore
         currentScore += amount;
@@ -34,5 +35,5 @@ public class ScoreManager : MonoBehaviour
         //changes display text to "score" + scoreValue
         //score += amount;
 
-    }
+    }*/
 }
