@@ -23,7 +23,7 @@ public class TakeDamage : MonoBehaviour
         {
             Debug.Log("BOOM! EXPLODE!");
             Destroy(gameObject);
-
+            
             Health playerHealth = player.gameObject.GetComponent<Health>();
             if (playerHealth != null)
             {

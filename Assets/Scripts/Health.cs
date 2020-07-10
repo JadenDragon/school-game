@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    //creates an event for other scripts to listen
+    //only triggered by this script
     public static event Action OnPlayerDeath;
+    public event Action OnHealthChange;
 
     public int currentHealth = 100;
     public int maxHealth = 100;
@@ -14,8 +17,12 @@ public class Health : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log("Taking " + damage + " HP damage! Health = " + currentHealth+"HP");
+        if (OnHealthChange != null)
+            OnHealthChange();
+
         if(currentHealth <= 0)
         {
+            GetComponent<SimplePhysicsControls>().moveSpeed = 0;
             onDeath();
         }
     }
@@ -43,14 +50,10 @@ public class Health : MonoBehaviour
 
      void onDeath()
     {
-        GetComponent<Movement>().moveSpeed = 0;
         Debug.Log("YOU DIED!");
         //GameManager.GetManager().PlayerDies();
-        
+
         //triggers event for every object that listens to it
-        if (OnPlayerDeath != null)
-        {
-            OnPlayerDeath();
-        }
+        OnPlayerDeath?.Invoke();
     }
 }
