@@ -8,12 +8,12 @@ public class Health : MonoBehaviour
     public static event Action OnPlayerDeath;
     public event Action OnHealthChange;
 
-    public int currentHealth = 100;
-    public int maxHealth = 100;
+    public float currentHealth = 100.0f;
+    public float maxHealth = 100.0f;
     public const int addHealth = 5;
 
     //subtract damage from health on call
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
         Debug.Log("Taking " + damage + " HP damage! Health = " + currentHealth+"HP");
@@ -27,7 +27,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void GainHealth(int heal = addHealth)
+    public void GainHealth(float heal = addHealth)
     {
         //health regenerated is the same value as addHealth which is dependant on the regen value of object/prefab
         
