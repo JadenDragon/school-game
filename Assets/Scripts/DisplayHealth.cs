@@ -5,18 +5,19 @@ using UnityEngine;
 public class DisplayHealth : MonoBehaviour
 {
     // Start is called before the first frame update
-    RectTransform m_RectTransform;
-    public Health playerHealth;
+    //RectTransform m_RectTransform;
+    private Health playerHealth;
     
     void Start()
     {
-        playerHealth = GetComponent<Health>();
-        UpdateHealth();
+        playerHealth =  GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+        //UpdateHealth();
+        playerHealth.OnHealthChange += UpdateHealth;
     }
 
     private void Update()
     {
-        playerHealth.OnHealthChange += UpdateHealth;
+
     }
 
     private void OnDestroy()
@@ -27,7 +28,7 @@ public class DisplayHealth : MonoBehaviour
     void UpdateHealth()
     {
         RectTransform rt = GetComponent<RectTransform>();
-        rt.localScale = new Vector3(playerHealth.currentHealth, 1, 1);
+        rt.localScale = new Vector3(playerHealth.currentHealth/playerHealth.maxHealth, 1, 1);
         Debug.Log("im here");
     }
 }
