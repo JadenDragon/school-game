@@ -15,13 +15,18 @@ public class Health : MonoBehaviour
     //subtract damage from health on call
     public void TakeDamage(float damage)
     {
-        currentHealth -= damage;
+        if (damage > currentHealth)
+            currentHealth = 0;
+        else
+            currentHealth -= damage;
+
         Debug.Log("Taking " + damage + " HP damage! Health = " + currentHealth+"HP");
         if (OnHealthChange != null)
             OnHealthChange();
 
         if(currentHealth <= 0)
         {
+            currentHealth = 0;
             GetComponent<SimplePhysicsControls>().moveSpeed = 0;
             onDeath();
         }
