@@ -12,15 +12,18 @@ public class SimplePhysicsControls : MonoBehaviour {
 	public float moveSpeed;
 	public float jumpPower;
 
+	public float rotateSpeed;
+	
 	Rigidbody rb;
 
 	bool jumpPressed;
 	bool grounded;
 
 	void Start() {
-		rb=GetComponent<Rigidbody>();			
+		rb = GetComponent<Rigidbody>();			
 	}
 
+	
 	private void Update() {
 		// Jumping:
 		if (Input.GetKeyDown(KeyCode.Space)) {
@@ -48,6 +51,16 @@ public class SimplePhysicsControls : MonoBehaviour {
 
 	void FixedUpdate() {
 		Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+		//rotate player forward rotation to movement direction
+		//TO DO: fix camera stutter on rotation
+/*		if (moveVector != Vector3.zero)
+			transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveVector), rotateSpeed * Time.deltaTime);
+
+		
+			rb.MovePosition(transform.position + moveSpeed * Time.deltaTime * moveVector);
+			rb.MoveRotation(Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(moveVector), rotateSpeed * Time.deltaTime));
+		*/
 
 		//Two variants of checking whether we're grounded:
 
