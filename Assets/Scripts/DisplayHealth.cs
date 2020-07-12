@@ -23,6 +23,7 @@ public class DisplayHealth : MonoBehaviour
     private void OnDestroy()
     {
         playerHealth.OnHealthChange -= UpdateHealth;
+        
     }
 
     void UpdateHealth()
@@ -31,4 +32,11 @@ public class DisplayHealth : MonoBehaviour
         rt.localScale = new Vector3(playerHealth.currentHealth/playerHealth.maxHealth, 1, 1);
         Debug.Log("im here");
     }
+
+    /*void IncreaseHealth()
+    {
+        RectTransform rt = GetComponent<RectTransform>();
+        rt.localScale = new Vector3(1, 1, 1);
+        Debug.Log("im healing");
+    }*/
 }

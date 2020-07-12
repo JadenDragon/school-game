@@ -16,6 +16,7 @@ public class PickUp : MonoBehaviour
     public PlayerController player;
 
     private string nextScene;
+    [SerializeField] private AudioClip clip;
 
     private void Start()
     {
@@ -41,6 +42,7 @@ public class PickUp : MonoBehaviour
             }
             else if (type == PickUpType.MONEY)
             {
+                SoundManager.instance.PlaySound(clip);
                 ScoreManager playerScore = other.GetComponentInParent<ScoreManager>();
                 //playerScore.AddScore(amount);
                 ScoreManager.theScore += amount;
@@ -49,7 +51,11 @@ public class PickUp : MonoBehaviour
             }
              else if (type == PickUpType.KEY)
             {
-                //SceneManager.LoadScene(nextScene);
+                SoundManager.instance.PlaySound(clip);
+                KeyManager levelKeys = other.GetComponentInParent<KeyManager>();
+                ScoreManager.theScore += amount;
+                SceneManager.LoadScene(nextScene);
+                Destroy(gameObject);
             }
         }
     }

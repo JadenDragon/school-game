@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.Audio;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
@@ -17,12 +17,12 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _audioSource = GetComponent<AudioSource>(); 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySound(AudioClip clip)
     {
-        
+        _audioSource.clip = clip;
+        _audioSource.Play();
     }
 }
