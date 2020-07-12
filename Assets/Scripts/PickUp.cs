@@ -54,7 +54,7 @@ public class PickUp : MonoBehaviour
                 SoundManager.instance.PlaySound(clip);
                 KeyManager levelKeys = other.GetComponentInParent<KeyManager>();
                 ScoreManager.theScore += amount;
-                SceneManager.LoadScene(nextScene);
+                //SceneManager.LoadScene(nextScene);
                 Destroy(gameObject);
             }
         }

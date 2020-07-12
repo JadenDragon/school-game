@@ -107,5 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  amount: 5
+  amount: 20
+  RotationSpeed: 50
   player: {fileID: 0}
+  clip: {fileID: 0}
