@@ -21,7 +21,7 @@ public class PlayerCamera : MonoBehaviour
     {
         //NOTE: rotations are applied from right to left
         //store the rotation around the Yaxis
-        Quaternion playerY_Rotation = Quaternion.Euler(0, target.rotation.eulerAngles.y, 0);
+        Quaternion playerY_Rotation = Quaternion.Euler(0f, target.rotation.eulerAngles.y, 0);
         currentY_Rotation = Quaternion.Slerp(currentY_Rotation, playerY_Rotation, cameraSpeed * Time.deltaTime);
 
         transform.position = target.position + target.rotation * offset;

@@ -28,6 +28,7 @@ public class TakeDamage : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damageAmount);
+               
             }
         }
     }
