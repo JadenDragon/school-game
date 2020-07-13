@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
 
     public float currentHealth = 100.0f;
     public float maxHealth = 100.0f;
-    public const int addHealth = 5;
+    public const float addHealth = 15f;
 
     //subtract damage from health on call
     public void TakeDamage(float damage)

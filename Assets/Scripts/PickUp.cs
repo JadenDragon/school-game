@@ -35,7 +35,7 @@ public class PickUp : MonoBehaviour
         {
              if (type == PickUpType.HEALTH)
             {
-                Health playerHealth =  other.GetComponentInParent<Health>();
+                Health playerHealth = other.GetComponentInParent<Health>();
                 playerHealth.GainHealth(amount);
                 Destroy(gameObject);
                 Debug.Log("Player got health");
@@ -58,6 +58,8 @@ public class PickUp : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+
     }
 
 }
